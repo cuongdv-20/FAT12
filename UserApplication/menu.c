@@ -27,7 +27,7 @@ void user(void){
                if(tmp->attr == 0x00){
                     fat_free_entry();
                     fat_read_file(tmp->address);
-                    getch();
+                    //getch();
                     if(prevLocation==fatBoot.rootLocation){
                         pHead=fat_read_root_dir();
                         fat_print_entry();
