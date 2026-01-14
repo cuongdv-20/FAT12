@@ -63,7 +63,7 @@ bool fat_read_boot_info(uint8_t *filePath){
 
 /* Function return next cluster from current cluster as parameter */
 static uint32_t fat12_get_next_cluster(uint32_t currentCluster){
-    uint8_t buff[fatBoot.sectorSize*2];
+    uint8_t buff[512];
     uint32_t clusVal = 0;
     uint32_t fatByte = (currentCluster*3)/2;
     uint32_t sectorIndex = fatByte/fatBoot.sectorSize;
@@ -135,7 +135,7 @@ void fat_read_entry(uint8_t *buff, uint32_t countEntry){
 }
 
 void* fat_read_root_dir(void){
-    uint8_t buff[fatBoot.sectorSize];
+    uint8_t buff[512];
     uint32_t countEntry;
     uint32_t countSector;
     uint32_t countByte;
@@ -165,7 +165,7 @@ void* fat_read_root_dir(void){
 }
 
 void* fat_read_sub_dir(uint32_t firstCluster){
-    uint8_t buff[fatBoot.sectorSize*fatBoot.sectorPerCluster];
+    uint8_t buff[512];
     uint32_t countEntry;
     uint32_t countByte;
     uint32_t currentCluster = firstCluster;
@@ -196,7 +196,7 @@ void* fat_read_sub_dir(uint32_t firstCluster){
 }
 
 void fat_read_file(uint32_t firstCluster){
-    uint8_t buff[fatBoot.sectorSize*fatBoot.sectorPerCluster];
+    uint8_t buff[512];
     uint32_t countByte;
     uint32_t currentCluster = firstCluster;
 
