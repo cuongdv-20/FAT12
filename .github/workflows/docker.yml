@@ -10,3 +10,12 @@ jobs:
       -
         name: Set up Docker
         uses: docker/setup-docker-action@v4
+      - name: checkout
+        uses: actions/checkout@v4  
+      - name: build image
+        run: docker build ./api/ -t cuongdv20/fat12:latest
+      - name: push image to docker hub
+        run: |
+        docker login -u cuongdv20 -p ${{DOCKER}}
+        docker push cuongdv20/fat12:latest
+      
