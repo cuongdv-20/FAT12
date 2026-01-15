@@ -1,0 +1,12 @@
+name: ci
+
+on:
+  push:
+
+jobs:
+  docker:
+    runs-on: windows-latest
+    steps:
+      -
+        name: Set up Docker
+        uses: docker/setup-docker-action@v4
