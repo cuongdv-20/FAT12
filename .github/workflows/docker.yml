@@ -16,6 +16,6 @@ jobs:
         run: docker build ./ -t cuongdv20/fat12:latest
       - name: push image to docker hub
         run:  |
-          docker login -u cuongdv20 -p ${{ secrets.GITHUB_TOKEN }}
+          docker login -u cuongdv20 -p ${{ secrets.DOCKER }}
           docker push cuongdv20/fat12:latest
       
