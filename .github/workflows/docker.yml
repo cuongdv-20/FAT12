@@ -12,6 +12,10 @@ jobs:
         uses: docker/setup-docker-action@v4
       - name: checkout
         uses: actions/checkout@v4  
+      - name: switch daemon
+        uses: cd C://Program Files//Docker//Docker
+      - name: switch daemon2
+        uses: ./DockerCli.exe -SwitchDaemon
       - name: build image
         run: docker build ./ -t cuongdv20/fat12:latest
       - name: push image to docker hub
