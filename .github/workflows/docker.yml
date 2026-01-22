@@ -13,7 +13,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4  
       - name: build image
-        run: docker build ./api/ -t cuongdv20/fat12:latest
+        run: docker build ./ -t cuongdv20/fat12:latest
       - name: push image to docker hub
         run: docker push cuongdv20/fat12:latest
       
