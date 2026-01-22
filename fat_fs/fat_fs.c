@@ -23,6 +23,7 @@ bool haveLongName = false;
 fatEntry *pHead=NULL;
 uint32_t subEntryCount = 0;
 
+static fatBootGetInfo fatBoot;
 static uint32_t fat12_get_next_cluster(uint32_t currentCluster);
 static uint32_t fat16_get_next_cluster(uint32_t currentCluster);
 static uint32_t fat32_get_next_cluster(uint32_t currentCluster);

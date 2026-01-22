@@ -14,7 +14,7 @@ typedef struct {
     uint16_t sectorBeforeData;
     uint32_t sectorSize;
 }fatBootGetInfo;
-fatBootGetInfo fatBoot;
+
 
 typedef struct fatEntryGetInfo{
     uint32_t entryIndex;
